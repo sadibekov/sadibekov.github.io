@@ -11,7 +11,6 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       function parseDate(dateString) {
-        // Parse MM/YYYY into a Date object
         const [month, year] = dateString.split("/");
         return new Date(`${year}-${month}-01`);
       }
@@ -40,7 +39,7 @@
       }
 
       const experiences = [
-        { start: '08/2023', end: '04/2024', elementId: 'exp1' },
+        { start: '08/2023', end: '07/2024', elementId: 'exp1' },
         { start: '11/2021', end: '05/2022', elementId: 'exp2' },
         { start: '09/2019', end: '09/2020', elementId: 'exp3' }
       ];
@@ -50,13 +49,14 @@
         const durationText = calculateDurationText(totalMonths);
         const element = document.getElementById(exp.elementId);
         if (element) {
-          element.textContent = `${exp.start} - ${exp.end} • ${durationText}`;
+          element.textContent = `${exp.start} - ${exp.end}`; // • ${durationText}
         }
       });
 
       const educations = [
-        { start: '09/2024', end: '06/2029', elementId: 'edu1' },
-        { start: '09/2019', end: '06/2023', elementId: 'edu2' }
+        { start: '09/2015', end: '06/2019', elementId: 'edu1' },
+        { start: '09/2019', end: '06/2023', elementId: 'edu2' },
+        { start: '09/2024', end: '06/2028', elementId: 'edu3' }
       ];
 
       educations.forEach(edu => {
@@ -72,22 +72,26 @@
 </head>
 
 <body>
-  <br>
+  <div class="hero"></div>
 
-  <!-- <div class="introduction">
-    <img src="/images/Avatar.jpg" alt="">
-    <h1>Nurali Sadibekov</h1>
-    <p>batyrkhanurali@gmail.com</p>
-  </div> -->
+  <div class="introduction">
+    <img src="/images/Avatar.png" alt="">
+  </div>
 
   <div class="layout">
     <!-- About -->
     <div class="block">
-      <h2>About</h2>
+      <marquee scrollamount="8">
+        <div style="display: flex; align-items: center; justify-content: center; flex-direction: row; gap: 16px;">
+          <!-- <img src="./images/KazakhstanFlag.png" alt="" height="24"> -->
+          <h3 style="font-family: 'Inter';">Sälem • Hello • 你好 • مرحبًا • Hola • Здравствуй • Bonjour</h3>
+        </div>
+      </marquee>
       <div class="block-item">
         <div class="block-right">
           <b>Nurali Sadibekov</b>
-          <p>الوقت من ذهب</p>
+          <p>Welcome to my engineering webpage <br> Here I share with you my works, projects and publications
+          </p>
         </div>
       </div>
     </div>
@@ -119,14 +123,48 @@
 
     <br> -->
 
+    <!-- Education -->
+    <div class="block">
+      <h2>Education</h2>
+      <!-- <div class="block-item">
+        <div class="block-left">
+          <img src="/images/XiamenUniversity.png" alt="">
+        </div>
+        <div class="block-right">
+          <b>Xiamen University</b>
+          <p>Bachelor of Engineering • New Energy Science and Engineering</p>
+          <p class="caption" id="edu3"></p>
+        </div>
+      </div> -->
+      <div class="block-item">
+        <div class="block-left">
+          <img src="/images/Placeholder.png" alt="">
+        </div>
+        <div class="block-right">
+          <b>Technical College</b>
+          <p>Associate of Science • Information Security</p>
+          <p class="caption" id="edu2"></p>
+        </div>
+      </div>
+      <div class="block-item">
+        <div class="block-left">
+          <img src="/images/Placeholder.png" alt="">
+        </div>
+        <div class="block-right">
+          <b>Public School 36</b>
+          <p class="caption" id="edu1"></p>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
     <!-- Experience -->
     <div class="block">
       <h2>Experience</h2>
       <div class="block-item">
         <div class="block-left">
-          <img
-            src="https://media.licdn.com/dms/image/C4E0BAQEeIdIXXYPc7g/company-logo_200_200/0/1636951240699?e=2147483647&v=beta&t=pp2UgdxjjkoGxFMmnS92M3EcE67NchFWNd7lcZRdFsg"
-            alt="">
+          <img src="./images/PalomaPOS.png" alt="">
         </div>
         <div class="block-right">
           <b>Software Engineer</b>
@@ -136,25 +174,21 @@
       </div>
       <div class="block-item">
         <div class="block-left">
-          <img
-            src="https://media.licdn.com/dms/image/C4D0BAQEyZhwVW8gM4g/company-logo_200_200/0/1630531120934/tefogo_logo?e=2147483647&v=beta&t=7yOx9gCGH_LnOOqLJrozYgrTi7UO0E2RoOSnTKkIMk0"
-            alt="">
+          <img src="./images/Tefogo.png" alt="">
         </div>
         <div class="block-right">
           <b>Software Engineer</b>
-          <p>Tefogo • London, United Kingdom</p>
+          <p>Tefogo</p>
           <p class="caption" id="exp2"></p>
         </div>
       </div>
       <div class="block-item">
         <div class="block-left">
-          <img
-            src="https://media.licdn.com/dms/image/C4E0BAQHJqIqHPO47vA/company-logo_200_200/0/1630637835791?e=2147483647&v=beta&t=OnlQgof5pd_t1s5R5HVOLZ1Gm9KvGGqwHuOMuOpB_xU"
-            alt="">
+          <img src="./images/Enactus.png" alt="">
         </div>
         <div class="block-right">
           <b>Project Assistant</b>
-          <p>Enactus Kazakhstan • Almaty, Kazakhstan</p>
+          <p>Enactus Kazakhstan</p>
           <p class="caption" id="exp3"></p>
         </div>
       </div>
@@ -162,25 +196,6 @@
 
     <br>
 
-    <!-- Education -->
-    <div class="block">
-      <h2>Education</h2>
-      <div class="block-item">
-        <div class="block-left">
-          <img src="/images/Placeholder.png" alt="">
-        </div>
-        <div class="block-right">
-          <b>Innovative Technical College</b>
-          <p>Associate of Science • Information Security</p>
-          <ul>
-            <li>GPA: 3.68</li>
-          </ul>
-          <p class="caption" id="edu2"></p>
-        </div>
-      </div>
-    </div>
-
-    <br>
   </div>
 </body>
 
