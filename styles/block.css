@@ -1,0 +1,28 @@
+.block {
+    padding: 32px;
+    background-color: #ffffff;
+}
+
+.block-item {
+    display: flex;
+    margin-top: 16px;
+}
+
+.block-left {
+    display: flex;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+}
+
+.block-left img {
+    height: 50%;
+    object-fit: cover;
+    margin-top: 8px;
+}
+
+.block-right {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
